@@ -1,0 +1,23 @@
+<!--
+Mini SOC - Phase 2 Authentication Detection
+
+Validated project rule for the actual Windows EventChannel telemetry observed
+in this lab. The rule builds on Wazuh's existing authentication rule 60122
+rather than replacing the built-in Windows authentication rules.
+
+Custom rule ID: 100002
+Initial ID 100001 was already present in /var/ossec/etc/rules/local_rules.xml.
+The deployed rule was validated with wazuh-analysisd -t and then tested against
+an actual Windows Security Event 4625.
+-->
+
+<group name="mini_soc_authentication,windows,">
+
+  <rule id="100002" level="7">
+    <if_sid>60122</if_sid>
+    <field name="win.eventdata.targetUserName">^soc-test$</field>
+    <description>MINI-SOC: Failed authentication for monitored account soc-test</description>
+    <group>mini_soc_authentication,authentication_failed,</group>
+  </rule>
+
+</group>

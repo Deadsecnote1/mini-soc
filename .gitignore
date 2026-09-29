@@ -1,0 +1,48 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Secrets / credentials
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+credentials.*
+secrets.*
+
+# VirtualBox / VM files
+*.vdi
+*.vmdk
+*.vbox
+*.vbox-prev
+*.ova
+*.ovf
+
+# Archives / generated packages
+*.zip
+*.tar
+*.tar.gz
+
+# Wazuh / system-generated data
+ossec.log
+alerts.json
+archives.json
